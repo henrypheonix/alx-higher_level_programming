@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 """
-This is the "0-add_integer" module.
-The 0-add_integer module supplies one function, add_integer(a, b).
+This is the addition module.
+it adds 2 integers
+a and b must be first casted
 """
 
 
 def add_integer(a, b=98):
-    # Validate input
-    if not isinstance(a, (int, float)):
+    """a and are integers
+    Returns an integer: the addition of a and b
+    """
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
+    if not (isinstance(a, int)):
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    if not (isinstance(b, int)):
         raise TypeError("b must be an integer")
-
-    # Cast a and b to integers if they are floats
-    a = int(a) if isinstance(a, float) else a
-    b = int(b) if isinstance(b, float) else b
-
-    # Add a and b and return the result
-    return a + b
+    return (a + b)
